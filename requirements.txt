@@ -1,0 +1,9 @@
+flask
+pandas
+gunicorn
+sklearn
+scikit-image
+seaborn
+graphviz
+matplotlib
+scipy

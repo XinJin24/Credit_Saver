@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    	<meta charset="utf-8">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Loan Application Result Prediction</title>
+  </head>
+  <body>
+  	<h1> Loan Application Result Prediction </h1>
+	<form action="{{ url_for('main') }}" method="POST">
+	    <fieldset>
+	        <legend>Please enter the following info:</legend>
+	        Your Annuity: <input name="User_annuity" type="text" required><br>
+			How much you ask? <input name="ask_loan_amount" type="text" required><br>
+			<label for="date">what date is today? </label>
+    		<select id="date" name="date">
+      			<option value="date_mon">Monday</option>
+      			<option value="date_tue">Tuesday</option>
+      			<option value="date_wed">Wednesday</option>
+     		 	<option value="date_thu">Thursday</option>
+      			<option value="date_fri">Friday</option>
+				<option value="date_sat">Saturday</option>
+				<option value="date_sun">Sunday</option>
+    			</select><br>
+			<label for="time_hour">What time is it now? </label>
+    		<select id="time_hour" name="time_hour">
+      			<option value="time_hour_1">1</option>
+				<option value="time_hour_2">2</option>
+				<option value="time_hour_3">3</option>
+				<option value="time_hour_4">4</option>
+				<option value="time_hour_5">5</option>
+				<option value="time_hour_6">6</option>
+				<option value="time_hour_7">7</option>
+				<option value="time_hour_8">8</option>
+				<option value="time_hour_9">9</option>
+				<option value="time_hour_10">10</option>
+				<option value="time_hour_11">11</option>
+				<option value="time_hour_12">12</option>
+				<option value="time_hour_13">13</option>
+				<option value="time_hour_14">14</option>
+				<option value="time_hour_15">15</option>
+				<option value="time_hour_16">16</option>
+				<option value="time_hour_17">17</option>
+				<option value="time_hour_18">18</option>
+				<option value="time_hour_19">19</option>
+				<option value="time_hour_20">20</option>
+				<option value="time_hour_21">21</option>
+				<option value="time_hour_22">22</option>
+				<option value="time_hour_23">23</option>
+				<option value="time_hour_24">24</option>
+    			</select><br>
+			
+			<label for="loan_type">loan type:  </label>
+    		<select id="loan_type" name="loan_type">
+      			<option value="loan_type_consumer_loan">Consumer loans</option>
+      			<option value="loan_type_revolving_loan">Revolving loans</option>
+    			</select><br>
+			
+			<label for="accompany">anyone accompany you?  </label>
+    		<select id="accompany" name="accompany">
+      			<option value="accompany_family">Family</option>
+      			<option value="accompany_spouse">Spouse, partner</option>
+				<option value="accompany_group">group of people</option>
+				<option value="accompany_other">other</option>
+				<option value="accompany_unaccompanied">Unaccompanied</option>
+    			</select><br>
+			
+			<label for="goods_category">what is the type of the goods is it? </label>
+    		<select id="goods_category" name="goods_category">
+      			<option value="goods_category_audionvideo">Audio/Video</option>
+      			<option value="goods_category_autoAccessories">Auto Accessories</option>
+				<option value="goods_category_cloth">Clothing and Accessories</option>
+				<option value="goods_category_computer">Computers</option>
+				<option value="goods_category_construction">Construction Materials</option>
+				<option value="goods_category_consumerElectronics">Consumer Electronics</option>
+				<option value="goods_category_directSales">Direct Sales</option>
+				<option value="goods_category_education">Education</option>
+				<option value="goods_category_fitness">Fitness</option>
+				<option value="goods_category_furniture">Furniture</option>
+				<option value="goods_category_gardening">Gardening</option>
+				<option value="goods_category_homewares">Homewares</option>
+				<option value="goods_category_houseConstruction">House Construction</option>
+				<option value="goods_category_insurance">Insurance</option>
+				<option value="goods_category_jewelry">Jewelry</option>
+				<option value="goods_category_medicalSupplies">Medical Supplies</option>
+				<option value="goods_category_medicine">Medicine</option>
+				<option value="goods_category_mobile">Mobile</option>
+				<option value="goods_category_officeAppliances">Office Appliances</option>
+				<option value="goods_category_photo">Photo / Cinema Equipment</option>
+				<option value="goods_category_sport">Sport and Leisure</option>
+				<option value="goods_category_tourism">Tourism</option>
+				<option value="goods_category_vehicles">Vehicles</option>
+				<option value="goods_category_weapon">Weapon</option>
+				<option value="goods_category_other">Other</option>
+    			</select><br>
+				
+			<label for="channel_type">channel type:  </label>
+    		<select id="channel_type" name="channel_type">
+      			<option value="channel_type_carDealer">Car dealer</option>
+      			<option value="channel_type_corporateSales">Channel of corporate sales</option>
+				<option value="channel_type_contactCenter">Contact center</option>
+				<option value="channel_type_countryWide">Country-wide</option>
+				<option value="channel_type_creditOffice">Credit and cash offices</option>
+				<option value="channel_type_Regional">Regional / Local</option>
+				<option value="channel_type_stone">stone</option>
+    			</select><br>
+			
+			<label for="client_type">client type:  </label>
+    		<select id="client_type" name="client_type">
+      			<option value="client_type_refreshed">Refreshed</option>
+      			<option value="client_type_repeater">Repeater</option>
+    			</select><br>	
+
+			<label for="product_type">loan type:  </label>
+    		<select id="product_type" name="product_type">
+      			<option value="product_type_walkin">Walk in</option>
+      			<option value="product_type_xSell">X-sell</option>
+    			</select><br>
+
+			Your ideal interest rate: <input name="User_interestRate" type="text" required><br>
+
+			<label for="loan_purpose">Loan Purpose:  </label>
+    		<select id="loan_purpose" name="loan_purpose">
+      			<option value="loan_purpose_businessDevelopment">Business development</option>
+      			<option value="loan_purpose_buyingGarage">Buying a garage</option>
+				<option value="loan_purpose_buyingHoliday">Buying a holiday home / land</option>
+				<option value="loan_purpose_buyingHome">Buying a home</option>
+				<option value="loan_purpose_buyingCar">Buying a new car</option>
+				<option value="loan_purpose_buyingUsedCar">Buying a used car</option>
+				<option value="loan_purpose_buyingElectronic Equipment">Purchase of electronic equipment</option>
+				<option value="loan_purpose_carRepairs">Car repairs</option>
+				<option value="loan_purpose_education">Education</option>
+				<option value="loan_purpose_everydayExpenses">Everyday expenses</option>
+				<option value="loan_purpose_furniture">Furniture</option>
+				<option value="loan_purpose_gasification">Gasification / water supply</option>
+				<option value="loan_purpose_hobby">Hobby</option>
+				<option value="loan_purpose_journey">Journey</option>
+				<option value="loan_purpose_medicine">Medicine</option>
+				<option value="loan_purpose_forOthers">Money for a third person</option>
+				<option value="loan_purpose_payForOtherLoans">Payments on other loans</option>
+				<option value="loan_purpose_repairs">Repairs</option>
+				<option value="loan_purpose_urgent need">Urgent needs</option>
+				<option value="loan_purpose_wedding">Wedding / gift / holiday</option>
+				<option value="loan_purpose_other">others</option>
+				<option value="loan_purpose_refused">Refusal to name the goal</option>
+    			</select><br>
+
+			<label for="seller_industry">seller industry:  </label>
+    		<select id="seller_industry" name="seller_industry">
+      			<option value="seller_industry_clothing">Clothing</option>
+      			<option value="seller_industry_connectivity">Connectivity</option>
+				<option value="seller_industry_construction">Construction</option>
+				<option value="seller_industry_consumerElectronics">Consumer electronics</option>
+				<option value="seller_industry_furniture">Furniture</option>
+				<option value="seller_industry_industry">Industry</option>
+				<option value="seller_industry_jewelry">Jewelry</option>
+				<option value="seller_industry_MLMpartners">MLM partners</option>
+				<option value="seller_industry_tourism">Tourism</option>
+				<option value="seller_industry_others">others</option>
+    			</select><br>
+
+			Your Annuity: <input name="User_annuity" type="text" required><br>
+			Your Annuity: <input name="User_annuity" type="text" required><br>
+			Your Annuity: <input name="User_annuity" type="text" required><br>
+			Your Annuity: <input name="User_annuity" type="text" required><br>
+			Your Annuity: <input name="User_annuity" type="text" required><br>
+	        <input type="submit" value="Submit">
+	    </fieldset>
+	</form>
+	<div class="alert alert-success">
+		{% if input_text %}
+			<h4> Classification for: {{ input_text }} </h4>
+	  {% endif %}
+
+		{% if result %}
+			<p> Model predicted: {{ result }} </p>
+	  {% endif %}
+
+	    {% if precent_democrat %}
+	    	<p> Percent democrat: {{ precent_democrat }} </p>
+	    {% endif %}
+
+	    {% if precent_republican %}
+	    	<p> Percent republican: {{ precent_republican }} </p>
+	    {% endif %}
+	</div>
+     <p>
+		<a href="{{ url_for('classify_image') }} " class="btn btn-secondary my-4">Classify Image Page</a>
+		<a href="{{ url_for('images') }} " class="btn btn-secondary my-4">More Images Page</a>
+		<a href="{{ url_for('bootstrap') }} " class="btn btn-secondary my-4">Pretty Boostrap Page</a>
+		<a href="{{ url_for('input_values') }} " class="btn btn-secondary my-4">Input Values Page</a>
+
+     </p>
+  </body>
+</html>
