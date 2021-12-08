@@ -10,8 +10,18 @@
 	<form action="{{ url_for('main') }}" method="POST">
 	    <fieldset>
 	        <legend>Please enter the following info:</legend>
-	        Your Annuity: <input name="User_annuity" type="text" required><br>
+
+			<label for="loan_type">loan type:  </label>
+    		<select id="loan_type" name="loan_type">
+      			<option value="loan_type_consumer_loan">Consumer loans</option>
+      			<option value="loan_type_revolving_loan">Revolving loans</option>
+    			</select><br>
+
 			How much you ask? <input name="ask_loan_amount" type="text" required><br>
+			How much down payment you have today? <input name="down_payment_amount" type="text" required><br>
+			How much is the goods' price? <input name="goods_price" type="text" required><br>
+
+
 			<label for="date">what date is today? </label>
     		<select id="date" name="date">
       			<option value="date_mon">Monday</option>
@@ -22,6 +32,7 @@
 				<option value="date_sat">Saturday</option>
 				<option value="date_sun">Sunday</option>
     			</select><br>
+			
 			<label for="time_hour">What time is it now? </label>
     		<select id="time_hour" name="time_hour">
       			<option value="time_hour_1">1</option>
@@ -50,16 +61,11 @@
 				<option value="time_hour_24">24</option>
     			</select><br>
 			
-			<label for="loan_type">loan type:  </label>
-    		<select id="loan_type" name="loan_type">
-      			<option value="loan_type_consumer_loan">Consumer loans</option>
-      			<option value="loan_type_revolving_loan">Revolving loans</option>
-    			</select><br>
-			
 			<label for="accompany">anyone accompany you?  </label>
     		<select id="accompany" name="accompany">
       			<option value="accompany_family">Family</option>
       			<option value="accompany_spouse">Spouse, partner</option>
+				<option value="accompany_children">Children</option>
 				<option value="accompany_group">group of people</option>
 				<option value="accompany_other">other</option>
 				<option value="accompany_unaccompanied">Unaccompanied</option>
@@ -91,60 +97,11 @@
 				<option value="goods_category_tourism">Tourism</option>
 				<option value="goods_category_vehicles">Vehicles</option>
 				<option value="goods_category_weapon">Weapon</option>
+				<option value="goods_category_animal">Animals</option>
+				<option value="goods_category_additionalServices">Additional Services</option>
 				<option value="goods_category_other">Other</option>
     			</select><br>
-				
-			<label for="channel_type">channel type:  </label>
-    		<select id="channel_type" name="channel_type">
-      			<option value="channel_type_carDealer">Car dealer</option>
-      			<option value="channel_type_corporateSales">Channel of corporate sales</option>
-				<option value="channel_type_contactCenter">Contact center</option>
-				<option value="channel_type_countryWide">Country-wide</option>
-				<option value="channel_type_creditOffice">Credit and cash offices</option>
-				<option value="channel_type_Regional">Regional / Local</option>
-				<option value="channel_type_stone">stone</option>
-    			</select><br>
 			
-			<label for="client_type">client type:  </label>
-    		<select id="client_type" name="client_type">
-      			<option value="client_type_refreshed">Refreshed</option>
-      			<option value="client_type_repeater">Repeater</option>
-    			</select><br>	
-
-			<label for="product_type">loan type:  </label>
-    		<select id="product_type" name="product_type">
-      			<option value="product_type_walkin">Walk in</option>
-      			<option value="product_type_xSell">X-sell</option>
-    			</select><br>
-
-			Your ideal interest rate: <input name="User_interestRate" type="text" required><br>
-
-			<label for="loan_purpose">Loan Purpose:  </label>
-    		<select id="loan_purpose" name="loan_purpose">
-      			<option value="loan_purpose_businessDevelopment">Business development</option>
-      			<option value="loan_purpose_buyingGarage">Buying a garage</option>
-				<option value="loan_purpose_buyingHoliday">Buying a holiday home / land</option>
-				<option value="loan_purpose_buyingHome">Buying a home</option>
-				<option value="loan_purpose_buyingCar">Buying a new car</option>
-				<option value="loan_purpose_buyingUsedCar">Buying a used car</option>
-				<option value="loan_purpose_buyingElectronic Equipment">Purchase of electronic equipment</option>
-				<option value="loan_purpose_carRepairs">Car repairs</option>
-				<option value="loan_purpose_education">Education</option>
-				<option value="loan_purpose_everydayExpenses">Everyday expenses</option>
-				<option value="loan_purpose_furniture">Furniture</option>
-				<option value="loan_purpose_gasification">Gasification / water supply</option>
-				<option value="loan_purpose_hobby">Hobby</option>
-				<option value="loan_purpose_journey">Journey</option>
-				<option value="loan_purpose_medicine">Medicine</option>
-				<option value="loan_purpose_forOthers">Money for a third person</option>
-				<option value="loan_purpose_payForOtherLoans">Payments on other loans</option>
-				<option value="loan_purpose_repairs">Repairs</option>
-				<option value="loan_purpose_urgent need">Urgent needs</option>
-				<option value="loan_purpose_wedding">Wedding / gift / holiday</option>
-				<option value="loan_purpose_other">others</option>
-				<option value="loan_purpose_refused">Refusal to name the goal</option>
-    			</select><br>
-
 			<label for="seller_industry">seller industry:  </label>
     		<select id="seller_industry" name="seller_industry">
       			<option value="seller_industry_clothing">Clothing</option>
@@ -158,17 +115,104 @@
 				<option value="seller_industry_tourism">Tourism</option>
 				<option value="seller_industry_others">others</option>
     			</select><br>
+			
+			how many terms you are going to pay it back?(1-84 month) :  <input name="payment_term" type="text" required><br>
 
-			Your Annuity: <input name="User_annuity" type="text" required><br>
-			Your Annuity: <input name="User_annuity" type="text" required><br>
-			Your Annuity: <input name="User_annuity" type="text" required><br>
-			Your Annuity: <input name="User_annuity" type="text" required><br>
-			Your Annuity: <input name="User_annuity" type="text" required><br>
-	        <input type="submit" value="Submit">
+			<label for="client_type">client type:  </label>
+    		<select id="client_type" name="client_type">
+      			<option value="client_type_refreshed">Refreshed</option>
+      			<option value="client_type_repeater">Repeater</option>
+    			</select><br>	
+			
+			<label for="user_gender">Your Gender:  </label>
+    		<select id="user_gender" name="user_gender">
+      			<option value="user_gender_male">Male</option>
+      			<option value="user_gender_female">Female</option>
+    			</select><br>	
+
+			<label for="user_ownCar">You own a car:  </label>
+    		<select id="user_ownCar" name="user_ownCar">
+      			<option value="user_ownCar_yes">Yes</option>
+      			<option value="user_ownCar_no">No</option>
+    			</select><br>	
+
+			<label for="user_haveHouse">You own a house:  </label>
+    		<select id="user_haveHouse" name="user_haveHouse">
+      			<option value="user_haveHouse_yes">Yes</option>
+      			<option value="user_haveHouse_no">No</option>
+    			</select><br>
+
+			how many children you have :  <input name="user_childrenCount" type="text" required><br>
+
+			You annual income :  <input name="user_annualIncome" type="text" required><br>
+
+			<label for="user_incomeType">Your income type:  </label>
+    		<select id="user_incomeType" name="user_incomeType">
+      			<option value="user_incomeType_working">Working</option>
+      			<option value="user_incomeType_commerial">Commercial associate</option>
+				<option value="user_incomeType_pensioner">Pensioner</option>
+				<option value="user_incomeType_state">State servant</option>
+				<option value="user_incomeType_unemployed">Unemployed</option>
+				<option value="user_incomeType_student">Student</option>
+				<option value="user_incomeType_maternity">Maternity leave</option>
+    			</select><br>
+
+			<label for="user_educationType">Your highest education:  </label>
+    		<select id="user_educationType" name="user_educationType">
+      			<option value="user_educationType_secondary">Secondary / secondary special</option>
+      			<option value="user_educationType_higher">Higher education</option>
+				<option value="user_educationType_incompleteHigher">Incomplete higher education</option>
+				<option value="user_educationType_lowerSecondary">Lower secondary</option>
+				<option value="user_educationType_academicDegree">Academic degree</option>
+    			</select><br>
+
+			<label for="user_familyStatus">Your family status:  </label>
+    		<select id="user_familyStatus" name="user_familyStatus">
+      			<option value="user_familyStatus_married">Married</option>
+      			<option value="user_familyStatus_notMarried">Single / not married</option>
+				<option value="user_familyStatus_civil">Civil marriage</option>
+				<option value="user_familyStatus_separated">Separated</option>
+				<option value="user_familyStatus_widow">Widow</option>
+    			</select><br>
+
+			<label for="user_houseType">Your house type:  </label>
+    		<select id="user_houseType" name="user_houseType">
+      			<option value="user_houseType_house">House / apartment</option>
+      			<option value="user_houseType_withParents">With parents</option>
+				<option value="user_houseType_municiupal">Municipal apartment</option>
+				<option value="user_houseType_office">Office apartment</option>
+				<option value="user_houseType_co">Co-op apartment</option>
+    			</select><br>
+
+			what is your age :  <input name="user_age" type="text" required><br>
+
+		
+			How many days before the application you started current employment: <input name="User_employment_days" type="text" required><br>
+
+			at what age you own your first car: <input name="User_ageOwnCar" type="text" required><br>
+
+			<label for="user_ownMobile">Your house type:  </label>
+    		<select id="user_ownMobile" name="user_ownMobile">
+      			<option value="user_ownMobile_yes">Yes</option>
+      			<option value="user_ownMobile_no">No</option>
+    			</select><br>
+
+			<label for="user_ownEmail">Your house type:  </label>
+    		<select id="user_ownEmail" name="user_ownEmail">
+      			<option value="user_ownEmail_yes">Yes</option>
+      			<option value="user_ownEmail_no">No</option>
+    			</select><br>
+
+			how many family members you have: <input name="User_familyMembersCount" type="text" required><br>
+
+			<input type="submit" value="Submit">
+
 	    </fieldset>
 	</form>
 	<div class="alert alert-success">
-		{% if input_text %}
+		<h4> prediction result: {{ result }} </h4>
+
+		<!-- {% if input_text %}
 			<h4> Classification for: {{ input_text }} </h4>
 	  {% endif %}
 
@@ -182,7 +226,7 @@
 
 	    {% if precent_republican %}
 	    	<p> Percent republican: {{ precent_republican }} </p>
-	    {% endif %}
+	    {% endif %} -->
 	</div>
      <p>
 		<a href="{{ url_for('classify_image') }} " class="btn btn-secondary my-4">Classify Image Page</a>
