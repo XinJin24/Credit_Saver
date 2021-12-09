@@ -6,11 +6,7 @@ from skimage import io
 from skimage import transform
 import numpy as np
 from flask import send_from_directory, Flask, request, jsonify, render_template, redirect, url_for
-
-
-
 app = flask.Flask(__name__, template_folder='templates')
-
 path_to_vectorizer = 'models/vectorizer.pkl'
 path_to_text_classifier = 'models/text-classifier.pkl'
 path_to_image_classifier = 'models/image-classifier.pkl'
@@ -58,8 +54,8 @@ def main():
         user_educationType=flask.request.form['user_educationType']          
         user_familyStatus=flask.request.form['user_familyStatus']           
         user_housingType=flask.request.form['user_houseType']            
-        user_daysBirth=float(flask.request.form['user_age'])*360               
-        user_daysEmployed=flask.request.form['User_employment_days']                 
+        user_daysBirth=float(flask.request.form['user_age'])*-360               
+        user_daysEmployed=float(flask.request.form['User_employment_days'])*-1                 
         user_ownCarAge=flask.request.form['User_ageOwnCar']                 
         user_ownMobil=flask.request.form['user_ownMobile']                            
         user_ownEmail=flask.request.form['user_ownEmail']                    
@@ -1202,7 +1198,6 @@ def input_values():
             returned_var_two=var_two,
             returned_var_three=var_three,
             returned_list=list_of_inputs))
-
     return(flask.render_template('input_values.html'))
 
 
