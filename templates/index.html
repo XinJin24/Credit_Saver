@@ -28,44 +28,17 @@
       			<option value="date_tue">Tuesday</option>
       			<option value="date_wed">Wednesday</option>
      		 	<option value="date_thu">Thursday</option>
-      			<option value="date_fri">Friday</option>
 				<option value="date_sat">Saturday</option>
 				<option value="date_sun">Sunday</option>
     			</select><br>
 			
-			<label for="time_hour">What time is it now? </label>
-    		<select id="time_hour" name="time_hour">
-      			<option value="time_hour_1">1</option>
-				<option value="time_hour_2">2</option>
-				<option value="time_hour_3">3</option>
-				<option value="time_hour_4">4</option>
-				<option value="time_hour_5">5</option>
-				<option value="time_hour_6">6</option>
-				<option value="time_hour_7">7</option>
-				<option value="time_hour_8">8</option>
-				<option value="time_hour_9">9</option>
-				<option value="time_hour_10">10</option>
-				<option value="time_hour_11">11</option>
-				<option value="time_hour_12">12</option>
-				<option value="time_hour_13">13</option>
-				<option value="time_hour_14">14</option>
-				<option value="time_hour_15">15</option>
-				<option value="time_hour_16">16</option>
-				<option value="time_hour_17">17</option>
-				<option value="time_hour_18">18</option>
-				<option value="time_hour_19">19</option>
-				<option value="time_hour_20">20</option>
-				<option value="time_hour_21">21</option>
-				<option value="time_hour_22">22</option>
-				<option value="time_hour_23">23</option>
-				<option value="time_hour_24">24</option>
-    			</select><br>
+
+			What hour is it?(1-24) <input name="time_hour" type="text" required><br>
 			
 			<label for="accompany">anyone accompany you?  </label>
     		<select id="accompany" name="accompany">
       			<option value="accompany_family">Family</option>
       			<option value="accompany_spouse">Spouse, partner</option>
-				<option value="accompany_children">Children</option>
 				<option value="accompany_group">group of people</option>
 				<option value="accompany_other">other</option>
 				<option value="accompany_unaccompanied">Unaccompanied</option>
@@ -85,7 +58,6 @@
 				<option value="goods_category_furniture">Furniture</option>
 				<option value="goods_category_gardening">Gardening</option>
 				<option value="goods_category_homewares">Homewares</option>
-				<option value="goods_category_houseConstruction">House Construction</option>
 				<option value="goods_category_insurance">Insurance</option>
 				<option value="goods_category_jewelry">Jewelry</option>
 				<option value="goods_category_medicalSupplies">Medical Supplies</option>
@@ -98,7 +70,6 @@
 				<option value="goods_category_vehicles">Vehicles</option>
 				<option value="goods_category_weapon">Weapon</option>
 				<option value="goods_category_animal">Animals</option>
-				<option value="goods_category_additionalServices">Additional Services</option>
 				<option value="goods_category_other">Other</option>
     			</select><br>
 			
@@ -126,20 +97,20 @@
 			
 			<label for="user_gender">Your Gender:  </label>
     		<select id="user_gender" name="user_gender">
-      			<option value="user_gender_male">Male</option>
-      			<option value="user_gender_female">Female</option>
+      			<option value="1">Male</option>
+      			<option value="0">Female</option>
     			</select><br>	
 
 			<label for="user_ownCar">You own a car:  </label>
     		<select id="user_ownCar" name="user_ownCar">
-      			<option value="user_ownCar_yes">Yes</option>
-      			<option value="user_ownCar_no">No</option>
+      			<option value="1">Yes</option>
+      			<option value="0">No</option>
     			</select><br>	
 
 			<label for="user_haveHouse">You own a house:  </label>
     		<select id="user_haveHouse" name="user_haveHouse">
-      			<option value="user_haveHouse_yes">Yes</option>
-      			<option value="user_haveHouse_no">No</option>
+      			<option value="1">Yes</option>
+      			<option value="0">No</option>
     			</select><br>
 
 			how many children you have :  <input name="user_childrenCount" type="text" required><br>
@@ -149,7 +120,6 @@
 			<label for="user_incomeType">Your income type:  </label>
     		<select id="user_incomeType" name="user_incomeType">
       			<option value="user_incomeType_working">Working</option>
-      			<option value="user_incomeType_commerial">Commercial associate</option>
 				<option value="user_incomeType_pensioner">Pensioner</option>
 				<option value="user_incomeType_state">State servant</option>
 				<option value="user_incomeType_unemployed">Unemployed</option>
@@ -163,14 +133,12 @@
       			<option value="user_educationType_higher">Higher education</option>
 				<option value="user_educationType_incompleteHigher">Incomplete higher education</option>
 				<option value="user_educationType_lowerSecondary">Lower secondary</option>
-				<option value="user_educationType_academicDegree">Academic degree</option>
     			</select><br>
 
 			<label for="user_familyStatus">Your family status:  </label>
     		<select id="user_familyStatus" name="user_familyStatus">
       			<option value="user_familyStatus_married">Married</option>
       			<option value="user_familyStatus_notMarried">Single / not married</option>
-				<option value="user_familyStatus_civil">Civil marriage</option>
 				<option value="user_familyStatus_separated">Separated</option>
 				<option value="user_familyStatus_widow">Widow</option>
     			</select><br>
@@ -181,7 +149,7 @@
       			<option value="user_houseType_withParents">With parents</option>
 				<option value="user_houseType_municiupal">Municipal apartment</option>
 				<option value="user_houseType_office">Office apartment</option>
-				<option value="user_houseType_co">Co-op apartment</option>
+				<option value="user_houseType_rented">Rented Apartment</option>
     			</select><br>
 
 			what is your age :  <input name="user_age" type="text" required><br>
@@ -193,14 +161,14 @@
 
 			<label for="user_ownMobile">Your house type:  </label>
     		<select id="user_ownMobile" name="user_ownMobile">
-      			<option value="user_ownMobile_yes">Yes</option>
-      			<option value="user_ownMobile_no">No</option>
+      			<option value="1">Yes</option>
+      			<option value="0">No</option>
     			</select><br>
 
 			<label for="user_ownEmail">Your house type:  </label>
     		<select id="user_ownEmail" name="user_ownEmail">
-      			<option value="user_ownEmail_yes">Yes</option>
-      			<option value="user_ownEmail_no">No</option>
+      			<option value="1">Yes</option>
+      			<option value="0">No</option>
     			</select><br>
 
 			how many family members you have: <input name="User_familyMembersCount" type="text" required><br>
@@ -211,22 +179,6 @@
 	</form>
 	<div class="alert alert-success">
 		<h4> prediction result: {{ result }} </h4>
-
-		<!-- {% if input_text %}
-			<h4> Classification for: {{ input_text }} </h4>
-	  {% endif %}
-
-		{% if result %}
-			<p> Model predicted: {{ result }} </p>
-	  {% endif %}
-
-	    {% if precent_democrat %}
-	    	<p> Percent democrat: {{ precent_democrat }} </p>
-	    {% endif %}
-
-	    {% if precent_republican %}
-	    	<p> Percent republican: {{ precent_republican }} </p>
-	    {% endif %} -->
 	</div>
      <p>
 		<a href="{{ url_for('classify_image') }} " class="btn btn-secondary my-4">Classify Image Page</a>
@@ -236,4 +188,5 @@
 
      </p>
   </body>
-</html>
+</html> 
+
