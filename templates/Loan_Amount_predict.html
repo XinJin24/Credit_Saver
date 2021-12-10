@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My Web App</title>
+  </head>
+  <body>
+  	<h1> Maximum Loan Amount prediction Tool! </h1>
+<form action="{{ url_for('Loan_Amount_predict') }}" method="POST">
+  <fieldset>
+    <legend>Please enter the following info:</legend>
+
+How much you ask? <input name="ask_loan_amount" type="text" required><br>
+How much down payment you have today? <input name="down_payment_amount" type="text" required><br>
+How much is the goods' price? <input name="goods_price" type="text" required><br>
+how many terms you are going to pay it back?(1-84 month) :  <input name="payment_term" type="text" required><br>
+You annual income :  <input name="user_annualIncome" type="text" required><br>
+what is your age :  <input name="user_age" type="text" required><br>
+How many days before the application you started current employment: <input name="User_employment_days" type="text" required><br>
+<input type="submit" value="Submit">
+
+</fieldset>
+
+<div class="alert alert-success">
+  <h4> prediction result: {{ amount_result }} </h4>
+</div>
+<p>
+  <a href="{{ url_for('main') }} " class="btn btn-secondary my-4">Maximum loan amount prediction tool</a><br>
+  <a href="{{ url_for('bootstrap') }} " class="btn btn-secondary my-4">Pretty Boostrap Page</a>
+   </p>
+  </body>
+</html>
