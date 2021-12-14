@@ -1,53 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    	<meta charset="utf-8">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <title>Loan Application Result Prediction</title>
-  </head>
-  <body>
-  	<h1> Loan Application Result Prediction </h1>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<title>Loan Application Result Prediction</title>
+	<style>
+		body {
+			background-color: powderblue;
+			margin-left: 100px;
+		}
+
+		h1 {
+			color: black;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		p {
+			color: red;
+			margin-left: 100px;
+		}
+
+		h4 {
+			color: black;
+			font-weight: bold;
+			text-align: center;
+
+		}
+
+		div {
+			margin-right: 200px;
+		}
+
+		legend {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		label {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+
+		select {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+
+		input[type=text],
+		select {
+			width: 50%;
+			height: 70%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+
+<body>
+	<h1> Loan Application Result Prediction </h1>
 	<form action="{{ url_for('main') }}" method="POST">
-	    <fieldset>
-	        <legend>Please enter the following info:</legend>
+		<fieldset>
+			<legend>Please enter the following infos:</legend>
 
-			<label for="loan_type">loan type:  </label>
-    		<select id="loan_type" name="loan_type">
-      			<option value="loan_type_consumer_loan">Consumer loans</option>
-      			<option value="loan_type_revolving_loan">Revolving loans</option>
-    			</select><br>
+			<label for="loan_type">loan type: </label>
+			<select id="loan_type" name="loan_type">
+				<option value="loan_type_consumer_loan">Consumer loans</option>
+				<option value="loan_type_revolving_loan">Revolving loans</option>
+			</select><br>
 
-			How much you ask? <input name="ask_loan_amount" type="text" required><br>
-			How much down payment you have today? <input name="down_payment_amount" type="text" required><br>
-			How much is the goods' price? <input name="goods_price" type="text" required><br>
+			How much you ask? <input name="ask_loan_amount" type="text" placeholder="asking loan amount"
+				value="10000000" required><br>
+			How much down payment you have today? <input name="down_payment_amount" type="text" value="0" required><br>
+			How much is the goods' price? <input name="goods_price" type="text" value="2000000" required><br>
 
 
 			<label for="date">what date is today? </label>
-    		<select id="date" name="date">
-      			<option value="date_mon">Monday</option>
-      			<option value="date_tue">Tuesday</option>
-      			<option value="date_wed">Wednesday</option>
-     		 	<option value="date_thu">Thursday</option>
+			<select id="date" name="date">
+				<option value="date_mon">Monday</option>
+				<option value="date_tue">Tuesday</option>
+				<option value="date_wed">Wednesday</option>
+				<option value="date_thu">Thursday</option>
 				<option value="date_sat">Saturday</option>
 				<option value="date_sun">Sunday</option>
-    			</select><br>
-			
+			</select><br>
 
-			What hour is it?(1-24) <input name="time_hour" type="text" required><br>
-			
-			<label for="accompany">anyone accompany you?  </label>
-    		<select id="accompany" name="accompany">
-      			<option value="accompany_family">Family</option>
-      			<option value="accompany_spouse">Spouse, partner</option>
+
+			What hour is it? <input name="time_hour" type="text" placeholder="1-24" value="8" required><br>
+
+			<label for="accompany">anyone accompany you? </label>
+			<select id="accompany" name="accompany">
+				<option value="accompany_family">Family</option>
+				<option value="accompany_spouse">Spouse, partner</option>
 				<option value="accompany_group">group of people</option>
 				<option value="accompany_other">other</option>
 				<option value="accompany_unaccompanied">Unaccompanied</option>
-    			</select><br>
-			
+			</select><br>
+
 			<label for="goods_category">what is the type of the goods is it? </label>
-    		<select id="goods_category" name="goods_category">
-      			<option value="goods_category_audionvideo">Audio/Video</option>
-      			<option value="goods_category_autoAccessories">Auto Accessories</option>
+			<select id="goods_category" name="goods_category">
+				<option value="goods_category_audionvideo">Audio/Video</option>
+				<option value="goods_category_autoAccessories">Auto Accessories</option>
 				<option value="goods_category_cloth">Clothing and Accessories</option>
 				<option value="goods_category_computer">Computers</option>
 				<option value="goods_category_construction">Construction Materials</option>
@@ -71,12 +130,12 @@
 				<option value="goods_category_weapon">Weapon</option>
 				<option value="goods_category_animal">Animals</option>
 				<option value="goods_category_other">Other</option>
-    			</select><br>
-			
-			<label for="seller_industry">seller industry:  </label>
-    		<select id="seller_industry" name="seller_industry">
-      			<option value="seller_industry_clothing">Clothing</option>
-      			<option value="seller_industry_connectivity">Connectivity</option>
+			</select><br>
+
+			<label for="seller_industry">seller industry: </label>
+			<select id="seller_industry" name="seller_industry">
+				<option value="seller_industry_clothing">Clothing</option>
+				<option value="seller_industry_connectivity">Connectivity</option>
 				<option value="seller_industry_construction">Construction</option>
 				<option value="seller_industry_consumerElectronics">Consumer electronics</option>
 				<option value="seller_industry_furniture">Furniture</option>
@@ -85,105 +144,152 @@
 				<option value="seller_industry_MLMpartners">MLM partners</option>
 				<option value="seller_industry_tourism">Tourism</option>
 				<option value="seller_industry_others">others</option>
-    			</select><br>
-			
-			how many terms you are going to pay it back?(1-84 month) :  <input name="payment_term" type="text" required><br>
+			</select><br>
 
-			<label for="client_type">client type:  </label>
-    		<select id="client_type" name="client_type">
-      			<option value="client_type_refreshed">Refreshed</option>
-      			<option value="client_type_repeater">Repeater</option>
-    			</select><br>	
-			
-			<label for="user_gender">Your Gender:  </label>
-    		<select id="user_gender" name="user_gender">
-      			<option value="1">Male</option>
-      			<option value="0">Female</option>
-    			</select><br>	
+			how many terms you are going to pay it back? : <input name="payment_term" type="text" placeholder="1-84"
+				value="84" required><br>
 
-			<label for="user_ownCar">You own a car:  </label>
-    		<select id="user_ownCar" name="user_ownCar">
-      			<option value="1">Yes</option>
-      			<option value="0">No</option>
-    			</select><br>	
+			<label for="client_type">client type: </label>
+			<select id="client_type" name="client_type">
+				<option value="client_type_refreshed">Refreshed</option>
+				<option value="client_type_repeater">Repeater</option>
+			</select><br>
 
-			<label for="user_haveHouse">You own a house:  </label>
-    		<select id="user_haveHouse" name="user_haveHouse">
-      			<option value="1">Yes</option>
-      			<option value="0">No</option>
-    			</select><br>
+			<label for="user_gender">Your Gender: </label>
+			<select id="user_gender" name="user_gender">
+				<option value="1">Male</option>
+				<option value="0">Female</option>
+			</select><br>
 
-			how many children you have :  <input name="user_childrenCount" type="text" required><br>
+			<label for="user_ownCar">You own a car: </label>
+			<select id="user_ownCar" name="user_ownCar">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select><br>
 
-			You annual income :  <input name="user_annualIncome" type="text" required><br>
+			<label for="user_haveHouse">You own a house: </label>
+			<select id="user_haveHouse" name="user_haveHouse">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select><br>
 
-			<label for="user_incomeType">Your income type:  </label>
-    		<select id="user_incomeType" name="user_incomeType">
-      			<option value="user_incomeType_working">Working</option>
+			how many children you have : <input name="user_childrenCount" type="text" value="0" required><br>
+
+			You annual income : <input name="user_annualIncome" type="text" value="50000" required><br>
+
+			<label for="user_incomeType">Your income type: </label>
+			<select id="user_incomeType" name="user_incomeType">
+				<option value="user_incomeType_working">Working</option>
 				<option value="user_incomeType_pensioner">Pensioner</option>
 				<option value="user_incomeType_state">State servant</option>
 				<option value="user_incomeType_unemployed">Unemployed</option>
 				<option value="user_incomeType_student">Student</option>
 				<option value="user_incomeType_maternity">Maternity leave</option>
-    			</select><br>
+			</select><br>
 
-			<label for="user_educationType">Your highest education:  </label>
-    		<select id="user_educationType" name="user_educationType">
-      			<option value="user_educationType_secondary">Secondary / secondary special</option>
-      			<option value="user_educationType_higher">Higher education</option>
+			<label for="user_educationType">Your highest education: </label>
+			<select id="user_educationType" name="user_educationType">
+				<option value="user_educationType_secondary">Secondary / secondary special</option>
+				<option value="user_educationType_higher">Higher education</option>
 				<option value="user_educationType_incompleteHigher">Incomplete higher education</option>
 				<option value="user_educationType_lowerSecondary">Lower secondary</option>
-    			</select><br>
+			</select><br>
 
-			<label for="user_familyStatus">Your family status:  </label>
-    		<select id="user_familyStatus" name="user_familyStatus">
-      			<option value="user_familyStatus_married">Married</option>
-      			<option value="user_familyStatus_notMarried">Single / not married</option>
+			<label for="user_familyStatus">Your family status: </label>
+			<select id="user_familyStatus" name="user_familyStatus">
+				<option value="user_familyStatus_married">Married</option>
+				<option value="user_familyStatus_notMarried">Single / not married</option>
 				<option value="user_familyStatus_separated">Separated</option>
 				<option value="user_familyStatus_widow">Widow</option>
-    			</select><br>
+			</select><br>
 
-			<label for="user_houseType">Your house type:  </label>
-    		<select id="user_houseType" name="user_houseType">
-      			<option value="user_houseType_house">House / apartment</option>
-      			<option value="user_houseType_withParents">With parents</option>
+			<label for="user_houseType">Your house type: </label>
+			<select id="user_houseType" name="user_houseType">
+				<option value="user_houseType_house">House / apartment</option>
+				<option value="user_houseType_withParents">With parents</option>
 				<option value="user_houseType_municiupal">Municipal apartment</option>
 				<option value="user_houseType_office">Office apartment</option>
 				<option value="user_houseType_rented">Rented Apartment</option>
-    			</select><br>
+			</select><br>
 
-			what is your age :  <input name="user_age" type="text" required><br>
+			what is your age : <input name="user_age" type="text" value="30" required><br>
 
-		
-			How many days before the application you started current employment: <input name="User_employment_days" type="text" required><br>
 
-			at what age you own your first car: <input name="User_ageOwnCar" type="text" required><br>
+			How many days before the application you started current employment: <input name="User_employment_days"
+				type="text" value="360" required><br>
 
-			<label for="user_ownMobile">Your have a mobile phone?:  </label>
-    		<select id="user_ownMobile" name="user_ownMobile">
-      			<option value="1">Yes</option>
-      			<option value="0">No</option>
-    			</select><br>
+			at what age you own your first car: <input name="User_ageOwnCar" type="text"
+				placeholder="enter 0 if you have never owned a car" value="0" required><br>
 
-			<label for="user_ownEmail">Your have a working email?:  </label>
-    		<select id="user_ownEmail" name="user_ownEmail">
-      			<option value="1">Yes</option>
-      			<option value="0">No</option>
-    			</select><br>
+			<label for="user_ownMobile">Your have a mobile phone?: </label>
+			<select id="user_ownMobile" name="user_ownMobile">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select><br>
 
-			how many family members you have: <input name="User_familyMembersCount" type="text" required><br>
+			<label for="user_ownEmail">Your have a working email?: </label>
+			<select id="user_ownEmail" name="user_ownEmail">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select><br>
 
-			<input type="submit" value="Submit">
+			how many family members you have: <input name="User_familyMembersCount" type="text"
+				placeholder="enter 0 if do not have any" value="4" required><br>
 
-	    </fieldset>
+			<input type="submit" value="Submit" style="background-color:#B80C4D;
+ 
+			border: #2e6da4;
+			 
+			font-family: Arial, Geneva, Arial, Helvetica,  sans-serif;
+			 
+			font-size: 15px;
+			 
+			color: #fff;
+			 
+			letter-spacing: 1px;
+			 
+			padding: 8px 12px;
+			 
+			font-size: 14px;
+			 
+			font-weight: normal;
+			 
+			 
+			border-radius: 4px;
+			 
+			line-height: 1.5;
+			 
+			text-decoration:none;
+			margin-bottom:20px;
+			text-align: center">
+
+		</fieldset>
 	</form>
 	<div class="alert alert-success">
 		<h4> prediction result: {{ result }} </h4>
 	</div>
-     <p>
-		<a href="{{ url_for('Loan_Amount_predict') }} " class="btn btn-secondary my-4">Maximum loan amount prediction tool</a>
-		<a href="{{ url_for('bootstrap') }} " class="btn btn-secondary my-4">Pretty Boostrap Page</a>
-     </p>
-  </body>
-</html> 
+	<p>
+		<a href="{{ url_for('Loan_Amount_predict') }} " style="background-color: #5062ff;
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 26px;
+		margin: 4px 2px;
+		cursor: pointer;">Maximum loan amount prediction tool</a>
+		<a href="{{ url_for('bootstrap') }} " style="background-color: #5062ff;
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 26px;
+		margin: 4px 2px;
+		cursor: pointer;">Pretty Boostrap Page</a>
+	</p>
+</body>
 
+</html>

@@ -1,32 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>My Web App</title>
-  </head>
-  <body>
-  	<h1> Maximum Loan Amount prediction Tool! </h1>
-<form action="{{ url_for('Loan_Amount_predict') }}" method="POST">
-  <fieldset>
-    <legend>Please enter the following info:</legend>
 
-How much you ask? <input name="ask_loan_amount" type="text" required><br>
-How much down payment you have today? <input name="down_payment_amount" type="text" required><br>
-How much is the goods' price? <input name="goods_price" type="text" required><br>
-how many terms you are going to pay it back?(1-84 month) :  <input name="payment_term" type="text" required><br>
-You annual income :  <input name="user_annualIncome" type="text" required><br>
-what is your age :  <input name="user_age" type="text" required><br>
-How many days before the application you started current employment: <input name="User_employment_days" type="text" required><br>
-<input type="submit" value="Submit">
+<head>
+  <meta charset="utf-8">
+  <title>My Web App</title>
+  <style>
+    body {
+      background-color: powderblue;
+      margin-left: 200px;
+    }
 
-</fieldset>
+    h1 {
+      color: black;
+      font-weight: bold;
+      text-align: center;
+    }
 
-<div class="alert alert-success">
-  <h4> prediction result: {{ amount_result }} </h4>
-</div>
-<p>
-  <a href="{{ url_for('main') }} " class="btn btn-secondary my-4">Maximum loan amount prediction tool</a><br>
-  <a href="{{ url_for('bootstrap') }} " class="btn btn-secondary my-4">Pretty Boostrap Page</a>
-   </p>
-  </body>
+    p {
+      color: red;
+      margin-left: 200px;
+    }
+
+    h4 {
+      color: black;
+      font-weight: bold;
+      text-align: center;
+
+    }
+
+    div {
+      margin-right: 200px;
+    }
+
+    legend {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    select {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    input[type=text],
+    select {
+      width: 50%;
+      height: 70%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <h1> Maximum Loan Amount prediction Tool </h1>
+  <form action="{{ url_for('Loan_Amount_predict') }}" method="POST">
+    <fieldset>
+      <legend>Please enter the following infos:</legend>
+      How much down payment you have today? <input name="down_payment_amount" type="text" value ="0" required><br>
+      How much is the goods' price? <input name="goods_price" type="text" value ="100000" required><br>
+      how many terms you are going to pay it back?(1-84 month) : <input name="payment_term" type="text" value ="24" required><br>
+      You annual income : <input name="user_annualIncome" type="text" value ="30000" required><br>
+      what is your age : <input name="user_age" type="text" value ="30" required><br>
+      How many days before the application you started current employment: <input name="User_employment_days" type="text" value ="360" required><br>
+      <input type="submit" value="Submit" style="background-color:#B80C4D;
+ 
+			border: #2e6da4;
+			 
+			font-family: Arial, Geneva, Arial, Helvetica,  sans-serif;
+			 
+			font-size: 15px;
+			 
+			color: #fff;
+			 
+			letter-spacing: 1px;
+			 
+			padding: 8px 12px;
+			 
+			font-size: 14px;
+			 
+			font-weight: normal;
+			 
+			 
+			border-radius: 4px;
+			 
+			line-height: 1.5;
+			 
+			text-decoration:none;
+			margin-bottom:20px;
+			text-align: center">
+    </fieldset>
+
+    <div class="alert alert-success">
+      <h2> prediction result: {{ amount_result }} </h2>
+    </div>
+    <p>
+      <a href="{{ url_for('main') }} " style="background-color: #5062ff;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 26px;
+      margin: 4px 2px;
+      cursor: pointer;" >Loan Application Result Prediction Tool</a><br>
+      <a href="{{ url_for('bootstrap') }} " style="background-color: #5062ff;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 26px;
+      margin: 4px 2px;
+      cursor: pointer;
+      align-items: center;">Pretty Boostrap Page</a>
+    </p>
+</body>
+
 </html>
